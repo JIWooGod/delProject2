@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="roomMapper">
+<cache />
+
+	<sql id="basecolumn">
+		rm_no,rm_grade,rm_price,rm_pic,rm_loc,rm_bed,rm_view
+	</sql>
+	
+	<resultMap type="roomdto" id="roommap">
+		<id column="rm_no" jdbcType="VARCHAR" property="roomNo"/>
+		<result column="rm_grade" jdbcType="VARCHAR" property="roomGrade"/>
+		<result column="rm_price" jdbcType="VARCHAR" property="roomPrice"/>
+		<result column="rm_pic" jdbcType="VARCHAR" property="roomPic"/>
+		<result column="rm_loc" jdbcType="VARCHAR" property="roomLoc"/>
+		<result column="rm_bed" jdbcType="VARCHAR" property="roomBed"/>
+		<result column="rm_view" jdbcType="VARCHAR" property="roomView"/>
+	</resultMap>
+
+
+
+
+
+
+	<insert id="insertRoom" parameterType="roomdto" >
+		insert into room (<include refid="basecolumn"/>) values(#{roomNo},#{roomGrade},#{roomPrice},#{roomPic},#{roomLoc},#{roomBed},#{roomView})
+	</insert>
+	
+	
+	<select id="reservation" parameterType="roomdto" resultMap="roommap">
+		select <include refid="basecolumn"/> from room 
+			<where>
+			<if test="value != null">
+			 rm_grade = #{roomGrade} 
+			</if>
+		</where>
+	</select>
+</mapper>

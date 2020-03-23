@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC 	
+	"-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<settings>
+		<setting value="false" name="cacheEnabled"/>
+		<setting value="true" name="useGeneratedKeys"/>
+		<setting value="true" name="mapUnderscoreToCamelCase"/>
+		<setting value="PARTIAL" name="autoMappingBehavior"/>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<typeAliases >
+   		<typeAlias type ="model.dto.room.RoomDTO" alias = "roomdto"/><!-- 재훈  -->
+   		
+   		<!--  <typeAlias type ="model.dto.shop.shopDTO" alias = "shopdto"/>--><!-- 지우 -->
+   	</typeAliases>
+</configuration>
+
