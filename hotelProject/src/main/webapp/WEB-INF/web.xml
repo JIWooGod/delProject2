@@ -27,6 +27,7 @@
   			classpath:spring-hrRepository.xml
   			classpath:spring-shopBean.xml
   			classpath:spring-jdbc.xml
+  			classpath:spring-diningBeans.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

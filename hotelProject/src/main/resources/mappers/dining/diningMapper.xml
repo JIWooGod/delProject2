@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DiningMapper">
+<cache />
+	<resultMap type="sdto" id="seatBaseMap">
+		<id column="rst_no" jdbcType="BIGINT" property="rstNo" />
+		<id column="rst_tbl" jdbcType="BIGINT" property="rstTbl" />
+		<result column="rst_seat" jdbcType="BIGINT" property="rstSeat" />
+		<result column="tbl_kind" jdbcType="VARCHAR" property="tblKind" />
+	</resultMap>
+	
+	<!-- 궁궐 좌석리스트 -->
+	<select id="seatPlace" resultMap="seatBaseMap" parameterType="long">
+		SELECT * 
+		FROM SEATPLACE
+		WHERE RST_NO=1 ORDER BY RST_TBL ASC
+	</select>
+	
+	<insert id="tblInsert" parameterType="sdto">
+		INSERT INTO SEATPLACE(RST_NO, RST_TBL, RST_SEAT)
+		VALUES(#{rstNo}, #{rstTbl}, #{rstSeat})
+	</insert>
+</mapper>

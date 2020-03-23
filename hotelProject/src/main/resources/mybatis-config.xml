@@ -14,6 +14,8 @@
    		<typeAlias type ="model.dto.room.RoomDTO" alias = "roomdto"/>
    		
    		 <typeAlias type ="model.dto.shop.shopDTO" alias = "shopdto"/>
+   		 
+   		 <typeAlias type="Dining.DTO.SeatPlaceDTO" alias="sdto"/>
    	</typeAliases>
 </configuration>
 
