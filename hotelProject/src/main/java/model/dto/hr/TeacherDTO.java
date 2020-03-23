@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 @SuppressWarnings("serial")
 public class TeacherDTO implements Serializable {
-	Long lecNo;
+	Long teachNo;
 	String teachName;
 	String teachTel;
 	String teachEmail;
@@ -19,13 +19,12 @@ public class TeacherDTO implements Serializable {
 	Long joinChk;
 	String passState;
 	String teachIp;
-	String teachRepw;
 	
-	public Long getLecNo() {
-		return lecNo;
+	public Long getTeachNo() {
+		return teachNo;
 	}
-	public void setLecNo(Long lecNo) {
-		this.lecNo = lecNo;
+	public void setTeachNo(Long teachNo) {
+		this.teachNo = teachNo;
 	}
 	public String getTeachName() {
 		return teachName;
@@ -104,11 +103,5 @@ public class TeacherDTO implements Serializable {
 	}
 	public void setTeachIp(String teachIp) {
 		this.teachIp = teachIp;
-	}
-	public String getTeachRepw() {
-		return teachRepw;
-	}
-	public void setTeachRepw(String teachRepw) {
-		this.teachRepw = teachRepw;
 	}
 }

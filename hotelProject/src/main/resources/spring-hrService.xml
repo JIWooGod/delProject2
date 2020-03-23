@@ -6,4 +6,8 @@
 	
 	<!-- personnel service -->
 	<bean id="applyService" class="service.hr.ApplyService"/>
+	<bean id="empListService" class="service.hr.EmpListService"/>
+	<bean id="empDetailService" class="service.hr.EmpDetailService"/>
+	<bean id="empModifyService" class="service.hr.EmpModifyService"/>
+
 </beans> 

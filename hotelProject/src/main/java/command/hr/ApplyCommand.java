@@ -10,10 +10,17 @@ public class ApplyCommand {
 	String tel;
 	String email;
 	String addr;
-	MultipartFile[] certi;
+	String certi;
 	String career;
 	String violate;
+	Long deptNo;
 	
+	public Long getDeptNo() {
+		return deptNo;
+	}
+	public void setDeptNo(Long deptNo) {
+		this.deptNo = deptNo;
+	}
 	public String getId() {
 		return id;
 	}
@@ -68,10 +75,10 @@ public class ApplyCommand {
 	public void setViolate(String violate) {
 		this.violate = violate;
 	}
-	public MultipartFile[] getCerti() {
+	public String getCerti() {
 		return certi;
 	}
-	public void setCerti(MultipartFile[] certi) {
+	public void setCerti(String certi) {
 		this.certi = certi;
 	}
 }

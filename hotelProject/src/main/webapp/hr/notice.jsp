@@ -14,6 +14,7 @@
 <body>
 <h2>채용공고</h2>
 <p>호텔 델루나에서 채용하고 있음. 신청ㄱㄱ</p>
-<button class="btn" onclick='location.href="personnel/apply"'>지원하기</button>
+<button class="btn" onclick='location.href="personnel/apply?job=staff"'>직원 지원하기</button>
+<button class="btn" onclick='location.href="personnel/apply?job=teacher"'>강사 지원하기</button>
 </body>
 </html>

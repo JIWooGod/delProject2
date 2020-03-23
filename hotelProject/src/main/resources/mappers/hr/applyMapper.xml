@@ -3,5 +3,86 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="applyMapper">
 <cache />
+	<sql id="empBaseColumn">
+		EMP_NO, DEPT_NO, EMP_NAME, EMP_TEL, EMP_EMAIL,
+		EMP_ADDR, EMP_DATE, EMP_CARR, EMP_CERTI, EMP_ID,
+		EMP_PW, JOIN_CHK, PASS_STATE, EMP_IP
+	</sql>
+	<sql id="teacherBaseColumn">
+		TEACH_NO, TEACH_NAME, TEACH_TEL, TEACH_EMAIL,
+		TEACH_ADDR, TEACH_CARR, TEACH_VIOL, TEACH_CERTI,
+		TEACH_ID, TEACH_PW, TEACH_DATE, JOIN_CHK,
+		PASS_STATE, TEACH_IP
+	</sql>
+	<resultMap type="model.dto.hr.EmployeeDTO" id="empResult">
+		<id column="EMP_NO" jdbcType="BIGINT" property="empNo"/>
+		<result column="DEPT_NO" jdbcType="BIGINT" property="deptNo"/>
+		<result column="EMP_NAME" jdbcType="VARCHAR" property="empName"/>
+		<result column="EMP_TEL" jdbcType="VARCHAR" property="empTel"/>
+		<result column="EMP_EMAIL" jdbcType="VARCHAR" property="empEmail"/>
+		<result column="EMP_ADDR" jdbcType="VARCHAR" property="empAddr"/>
+		<result column="EMP_DATE" jdbcType="TIMESTAMP" property="empDate"/>
+		<result column="EMP_CARR" jdbcType="VARCHAR" property="empCarr"/>
+		<result column="EMP_CERTI" jdbcType="VARCHAR" property="empCerti"/>
+		<result column="EMP_ID" jdbcType="VARCHAR" property="empId"/>
+		<result column="EMP_PW" jdbcType="VARCHAR" property="empPw"/>
+		<result column="JOIN_CHK" jdbcType="BIGINT" property="joinChk"/>
+		<result column="PASS_STATE" jdbcType="VARCHAR" property="passState"/>
+		<result column="EMP_IP" jdbcType="VARCHAR" property="empIp"/>
+	</resultMap>
+	<resultMap type="model.dto.hr.TeacherDTO" id="tchResult">
+		<id column="TEACH_NO" jdbcType="BIGINT" property="teachNo"/>
+		<result column="TEACH_NAME" jdbcType="VARCHAR" property="teachName"/>
+		<result column="TEACH_TEL" jdbcType="VARCHAR" property="teachTel"/>
+		<result column="TEACH_EMAIL" jdbcType="VARCHAR" property="teachEmail"/>
+		<result column="TEACH_ADDR" jdbcType="VARCHAR" property="teachAddr"/>
+		<result column="TEACH_CARR" jdbcType="VARCHAR" property="teachCarr"/>
+		<result column="EMP_CERTI" jdbcType="VARCHAR" property="teachCerti"/>
+		<result column="TEACH_VIOL" jdbcType="VARCHAR" property="teachViol"/>
+		<result column="TEACH_ID" jdbcType="VARCHAR" property="teachId"/>
+		<result column="TEACH_PW" jdbcType="VARCHAR" property="teachPw"/>
+		<result column="TEACH_DATE" jdbcType="TIMESTAMP" property="teachDate"/>
+		<result column="JOIN_CHK" jdbcType="BIGINT" property="joinChk"/>
+		<result column="PASS_STATE" jdbcType="VARCHAR" property="passState"/>
+		<result column="TEACH_IP" jdbcType="VARCHAR" property="teachIp"/>
+	</resultMap>
 	
+	<insert id="applyInsert" parameterType="model.dto.hr.EmployeeDTO">
+		insert
+			into EMPLOYEE (<include refid="empBaseColumn"/>)
+			values(emp_no_seq.nextval, #{deptNo}, #{empName}, #{empTel},
+				#{empEmail}, #{empAddr}, sysdate, #{empCarr,jdbcType=VARCHAR},
+				#{empCerti,jdbcType=VARCHAR}, #{empId}, #{empPw}, 0,
+				#{passState,jdbcType=VARCHAR}, #{empIp})
+	</insert>
+	<select id="selectEmpList" resultMap="empResult">
+		select <include refid="empBaseColumn"/>
+			from EMPLOYEE
+	</select>
+	<select id="detailView" parameterType="model.dto.hr.EmployeeDTO" resultMap="empResult">
+		select <include refid="empBaseColumn"/>
+			from EMPLOYEE
+		<where>
+			EMP_NO = #{empNo}
+		</where>
+	</select>
+	<update id="empModify" parameterType="model.dto.hr.EmployeeDTO">
+		update EMPLOYEE
+			set EMP_NAME = #{empName},
+				EMP_TEL = #{empTel},
+				EMP_EMAIL = #{empEmail},
+				EMP_ADDR = #{empAddr},
+				EMP_CERTI = #{empCerti},
+				EMP_CARR = #{empCarr},
+				EMP_PW = #{empPw}
+	</update>
+	<insert id="applyInsert2" parameterType="model.dto.hr.TeacherDTO">
+		insert
+			into TEACHER (<include refid="teacherBaseColumn"/>)
+			values (tch_no_seq.nextval, #{teachName}, #{teachTel},
+				#{teachEmail}, #{teachAddr}, #{teachCarr},
+				#{teachViol}, #{teachCerti}, #{teachId},
+				#{teachPw}, sysdate, 0,
+				#{passState}, #{teachIp})
+	</insert>
 </mapper>

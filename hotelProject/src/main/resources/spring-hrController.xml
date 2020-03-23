@@ -7,4 +7,9 @@
 	   <!-- personnel controller -->
 	   <bean class="Controller.hr.NoticeController"/>
 	   <bean class="Controller.hr.ApplyEmpController"/>
+	   <bean class="Controller.hr.ListEmpController"/>
+	   <bean class="Controller.hr.DetailEmpController"/>
+	   <bean class="Controller.hr.FormEmpController"/>
+	   <bean class="Controller.hr.ModifyEmpController"/>
+	   
 </beans>

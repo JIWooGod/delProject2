@@ -6,5 +6,8 @@
 
 	<!-- personnel repository -->
 	<bean id="applyRepository" class="repository.hr.ApplyRepository"/>
-	
+	<bean id="empListRepository" class="repository.hr.EmpListRepository"/>
+	<bean id="empDetailRepository" class="repository.hr.EmpDetailRepository"/>
+	<bean id="empModifyRepository" class="repository.hr.EmpModifyRepository"/>
+
 </beans>

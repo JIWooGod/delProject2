@@ -19,7 +19,6 @@ public class EmployeeDTO implements Serializable{
 	Long joinChk;
 	String passState;
 	String empIp;
-	String empRepw;
 	
 	public Long getEmpNo() {
 		return empNo;
@@ -104,11 +103,5 @@ public class EmployeeDTO implements Serializable{
 	}
 	public void setEmpIp(String empIp) {
 		this.empIp = empIp;
-	}
-	public String getEmpRepw() {
-		return empRepw;
-	}
-	public void setEmpRepw(String empRepw) {
-		this.empRepw = empRepw;
 	}
 }

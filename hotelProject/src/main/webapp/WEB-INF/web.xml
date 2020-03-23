@@ -25,6 +25,7 @@
   			classpath:spring-hrController.xml
   			classpath:spring-hrService.xml
   			classpath:spring-hrRepository.xml
+  			classpath:spring-shopBean.xml
   			classpath:spring-jdbc.xml
   		</param-value>
   	</init-param>
