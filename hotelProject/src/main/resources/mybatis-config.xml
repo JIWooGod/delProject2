@@ -13,7 +13,7 @@
 	<typeAliases >
    		<typeAlias type ="model.dto.room.RoomDTO" alias = "roomdto"/><!-- 재훈  -->
    		
-   		<!--  <typeAlias type ="model.dto.shop.shopDTO" alias = "shopdto"/>--><!-- 지우 -->
+   		 <typeAlias type ="model.dto.shop.shopDTO" alias = "shopdto"/><!-- 지우 -->
    	</typeAliases>
 </configuration>
 

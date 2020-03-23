@@ -365,12 +365,16 @@ $(window).load(function() {
 							<div class="hs_reservation_right">
 								<h3 class="hs_reservation_title">옵션</h3>
 								<ul class="hs_reservation_litt" id="optionList">
+									<li><input type = "checkbox" name = "dndMode" value = "on">DoNotDisturb</li>
+									<li><input type = "checkbox" name = "noFeader" value = "on">깃털 알레르기</li>
+									<li><input type = "checkbox" name = "uncomfort" value = "on">장애인 편의 객실</li>
 								</ul>
-								<div class="hs_reservation_total">
-									<h3 class="hs_reservation_title">총금액</h3>
-									<span id="totMoney">0원</span> <span
-										class="hs_reservation_total_vat">vat포함</span>
-								</div>
+								<div class="hs_reservation_total"></div>
+								
+								특별 요청 사항<br/><br/>
+								<textarea name="rmbkContent" style="width:350px; height:100px;"></textarea>
+									
+							
 							</div>
 							<!--//옵션-->
 					</div>
