@@ -7,19 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class shopMainController {
 	@RequestMapping("/delshop")
 	public String shopMain() {
-		return "/shop/shopIndex";
+		return "shop/shopIndex";
 	}
 	@RequestMapping("/product")
 	public String productMain() {
-		
-		return "/shop/product-page";
+		return "shop/product-page";
 	}
 	@RequestMapping("/cart")
 	public String cartMain() {
-		return "/shop/shop-Cart";
+		return "shop/shop-Cart";
 	}
 	@RequestMapping("/sa")
 	public String goodsInsert() {
-		return "/shop/goodsInsert";
+		return "shop/goodsInsert";
 	}
 }
