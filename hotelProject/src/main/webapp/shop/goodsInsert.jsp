@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>델루나 쇼핑몰 - 관리자</title>
 	<script language="javascript">
-	function addboard(){
-		boardform.submit();
+	function addgoods(){
+		goodsform.submit();
 	}
 	</script>
 </head>
@@ -16,8 +16,7 @@
  <jsp:include page="./shopInclude/shopHeader.jsp" flush="true" /> 
 
 
-<form action="InsertPro" method="post"  
-	name="boardform" enctype="multipart/form-data">
+<form action="InsertPro" method="post"  name="goodsform" enctype="multipart/form-data">
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
 		<td colspan="5">상품등록</td>
@@ -27,7 +26,7 @@
 			<div align="center">입고코드</div>
 		</td>
 		<td>
-			<input name="boardSubject" type="text" size="20" maxlength="20" 
+			<input name="goodsInCode" type="text" size="20" maxlength="20" 
 				value=""/>
 		</td>
 	</tr>
@@ -36,7 +35,7 @@
 			<div align="center">판매가격</div>
 		</td>
 		<td>
-			<input name="boardSubject" type="text" size="20" maxlength="20" 
+			<input name="goodsPrices" type="text" size="20" maxlength="20" 
 				value=""/>
 		</td>
 	</tr>	
@@ -44,8 +43,8 @@
 		<td style="font-family:돋음; font-size:12" height="16">
 			<div align="center">카테고리</div>
 		</td>
-		<td>
-				<select name="CATEGORY" id="CATEGORY">
+		<td>	
+				<select name="goodsCategory" id="goodsCategory">
 				<option value="null">필수선택</option>
 				<option value="Outer">Outer</option>
 				<option value="Top">Top</option>
@@ -62,7 +61,7 @@
 			<div align="center">상품코드</div>
 		</td>
 		<td>
-			<input name="boardPass" type="text" size="20" maxlength="30" 
+			<input name="goodsCode" type="text" size="20" maxlength="30" 
 				value=""/>
 		</td>
 	</tr>
@@ -71,7 +70,7 @@
 			<div align="center">상품명</div>
 		</td>
 		<td>
-			<input name="boardSubject" type="text" size="50" maxlength="100" 
+			<input name="goodsName" type="text" size="50" maxlength="100" 
 				value=""/>
 		</td>
 	</tr>
@@ -88,7 +87,7 @@
 			<div align="center">상품설명</div>
 		</td>
 		<td>
-			<textarea name="boardContent" cols="67" rows="15"></textarea>
+			<textarea name="goodsOpt" cols="67" rows="15"></textarea>
 		</td>
 	</tr>
 	<tr>
@@ -96,7 +95,7 @@
 				<div align="center">파일</div>
 			</td>
 			<td>
-				<input type="file" name="report" multiple = "multiple" />
+				<input type="file" name="goodsPic" multiple = "multiple" />
 				<div >${fileError }</div>
 			</td>	
 	</tr>
@@ -107,7 +106,7 @@
 	<tr><td colspan="2">&nbsp;</td></tr>
 	<tr align="center" valign="middle">
 		<td colspan="5">
-			<a href="javascript:addboard()">[등록]</a>&nbsp;&nbsp;
+			<a href="javascript:addgoods()">[등록]</a>&nbsp;&nbsp;
 			
 			<a href="javascript:history.go(-1)">[뒤로]</a>
 		</td>
