@@ -304,8 +304,28 @@ $(window).load(function() {
 								name="days" value="1"> <input type="hidden" name="total"
 								value="">
 							
+						
+					
 							<!-- 객실전망 선택 -->
 							<div class="hs_reservation_left" style="padding: 0 20px 0 50px;">
+								<h3 class="hs_reservation_title">고객 정보</h3>
+								<ul class="hs_reservation_room_select">
+									<li>성명 &nbsp; &nbsp;<input type = "text" name = "memName"></li>
+									<li>연락처 <select name="userPh1" id="userPh1" class="select"
+												style="width: 70px;" req fname="휴대폰 번호">
+													<option value='010'>010</option>
+													<option value='011'>011</option>
+													<option value='016'>016</option>
+													<option value='017'>017</option>
+													<option value='018'>018</option>
+													<option value='019'>019</option>
+											</select>&nbsp;- <input type="text" name="userPh2" id="userPh2"
+												class="input_text numOnly" style="width: 48px;" req num
+												fname="휴대폰 번호" maxlength="4" />&nbsp;- <input type="text"
+												name="userPh3" id="userPh3" class="input_text numOnly"
+												style="width: 48px;" req num fname="휴대폰 번호" maxlength="4" /></li>
+									<li>이메일 </li>
+								</ul>
 								<h3 class="hs_reservation_title">객실 전망</h3>
 								<ul class="hs_reservation_room_select">
 										<li><label><span class="hs_checkbox"> 
@@ -359,7 +379,7 @@ $(window).load(function() {
 									
 								</ul>
 							</div>
-							<!--//객실선택-->
+							<!--//-->
 
 							<!--옵션-->
 							<div class="hs_reservation_right">
