@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="css/room.css">
 <link rel="stylesheet" href="./js/rolling.css" media="screen">
 <link rel="stylesheet" href="./css/slide.css" media="screen">
 <script src="./js/jquery-1.8.3.min.js"></script>

@@ -15,7 +15,7 @@
    		
    		 <typeAlias type ="model.dto.shop.shopDTO" alias = "shopdto"/>
    		 
-   		 <typeAlias type="Dining.DTO.SeatPlaceDTO" alias="sdto"/>
+   		 <typeAlias type="model.dto.dining.SeatPlaceDTO" alias="sdto"/>
    	</typeAliases>
 </configuration>
 
